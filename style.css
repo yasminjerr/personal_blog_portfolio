@@ -1,124 +1,143 @@
-/* Reset & Font Asas */
+/* Reset Asas */
 * {
     margin: 0;
     padding: 0;
-    box-shadow: border-box;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #2d3748;
+    background-color: #0f172a; /* Latar belakang gelap yang premium */
+    color: #e2e8f0;
     line-height: 1.7;
 }
 
-/* Header / Banner Utama */
-header {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-/* Menu Navigasi */
+/* 1. Menu Navigasi (Tetap di Atas) */
 nav {
-    background-color: #ffffff;
-    padding: 15px;
+    background-color: rgba(30, 41, 59, 0.95); /* Kelabu gelap dengan kesan sedikit lutsinar */
+    backdrop-filter: blur(10px); /* Kesan kabur (blur) di belakang menu, sangat moden! */
+    padding: 15px 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #334155;
 }
 
 nav a {
-    color: #4a5568;
+    color: #94a3b8;
     margin: 0 20px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    padding: 8px 16px;
+    padding: 8px 20px;
+    border-radius: 20px;
     transition: all 0.3s ease;
 }
 
-nav a:hover {
-    color: #1e3c72;
-    background-color: #ebf8ff;
-    border-radius: 20px;
+nav a:hover, nav a.active {
+    color: #fff;
+    background-color: #f59e0b; /* Warna oren/emas menyala seperti kawan anda */
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
 }
 
-/* Kotak Kandungan Utama */
+/* 2. Hero Banner / Header (GAMBAR LATAR BELAKANG - TEXT CENTERED) */
+.hero-banner {
+    background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.85)), 
+                url('background.jpg') no-repeat center center/cover;
+    height: 65vh; /* Mengambil 65% ketinggian skrin laptop */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Memastikan semua teks duduk di tengah */
+    padding: 0 20px;
+}
+
+.hero-banner h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    text-align: center; /* Memastikan tajuk utama sentiasa di tengah */
+}
+
+.hero-banner p {
+    font-size: 1.3rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    text-align: center; /* Memastikan penerangan sentiasa di tengah */
+}
+
+.hero-banner p span {
+    color: #f59e0b; /* Tulisan highlight oren/emas */
+    font-weight: 700;
+}
+
+/* 3. Kotak Kandungan (Reka Bentuk Kad Terapung) */
 .container {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    margin: -50px auto 60px auto; /* Margin negatif membuatkan kotak ini 'terapung' sedikit ke atas gambar banner */
+    padding: 40px;
+    background: #1e293b; /* Kotak kelabu gelap */
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155;
 }
 
 .container h2 {
-    color: #1e3c72;
-    border-bottom: 3px solid #e2e8f0;
-    padding-bottom: 10px;
+    color: #fff;
+    font-size: 2rem;
     margin-bottom: 20px;
+    border-left: 5px solid #f59e0b; /* Garis hiasan oren di sebelah kiri tajuk */
+    padding-left: 15px;
 }
 
-/* Kad Artikel Blog */
+/* Gaya untuk Kad Artikel di Halaman Blog */
 .post {
-    background: #f7fafc;
-    border-left: 5px solid #2a5298;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 0 8px 8px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #111827;
+    border: 1px solid #1e293b;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .post:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+    border-color: #f59e0b;
 }
 
 .post h3 {
-    color: #2d3748;
+    color: #fff;
     margin-bottom: 8px;
 }
 
 .post small {
-    color: #a0aec0;
+    color: #64748b;
     display: block;
     margin-bottom: 12px;
 }
 
-/* Halaman Hubungi (List & Link) */
-ul {
-    list-style-type: none;
-    padding-left: 0;
+/* Reka Bentuk Gambar Profil */
+.profile-img {
+    display: block;
+    max-width: 200px; /* Mengawal saiz lebar gambar supaya tidak terlalu besar */
+    height: auto;
+    border-radius: 50%; /* Membuatkan gambar menjadi bentuk bulat yang moden */
+    margin: 20px auto; /* Meletakkan gambar tepat di tengah-tengah halaman */
+    border: 4px solid #2a5298; /* Menambah bingkai berwarna biru mengikut tema web */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambah kesan bayang yang lembut */
 }
 
-ul li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #e2e8f0;
-}
-
-/* Footer Laman Web */
+/* 4. Bahagian Footer (BARU - TEXT CENTERED) */
 footer {
-    text-align: center;
+    text-align: center; /* Memastikan teks hak cipta berada di tengah */
     padding: 25px;
-    background-color: #1a202c;
-    color: #a0aec0;
+    background-color: #1e293b; /* Warna kotak kelabu gelap sama seperti kontainer */
+    color: #94a3b8;
     margin-top: 60px;
     font-size: 0.9rem;
+    border-top: 1px solid #334155;
 }
